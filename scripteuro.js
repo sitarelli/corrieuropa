@@ -96,15 +96,15 @@ function playWinSound() {
 const ROAD_SETTINGS = {
     START_Y_PERCENT: 26.5,
     ROAD_WIDTH_TOP: 50,
-    ROAD_WIDTH_BOTTOM: 400,
+    ROAD_WIDTH_BOTTOM: 700,
     TEXTURE_TILE_SIZE: 100,
     TEXTURE_SPEED_FACTOR: 2900,
     ROAD_PERSPECTIVE: 1500,
     ROAD_TILT: 15,
-    ROAD_OPACITY: 0.2,
+    ROAD_OPACITY: 0.3,
     LINES_WIDTH_TOP: 5,
     LINES_WIDTH_BOTTOM: 450,
-    ROTATION_DEG: -100,
+    ROTATION_DEG: 160,
     PERSPECTIVE_POWER: 9,
     NUM_SEGMENTS: 15
 };
@@ -147,37 +147,49 @@ const lastErrorDisplay = document.getElementById('last-error-display');
 const didYouKnowText = document.getElementById('did-you-know-text');
 
 /* --- GESTIONE INPUT (MOUSE + TOUCH + TASTIERA) --- */
+/* --- GESTIONE INPUT (CORRETTA) --- */
 function init() {
     document.addEventListener('keydown', handleInput);
 
-    // MOUSE: Click sulle 3 colonne
+    // MOUSE
     gameViewport.addEventListener('mousedown', e => {
         if (!state.isPlaying) return;
         const rect = gameViewport.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const width = rect.width;
-
         if (clickX < width * 0.33) state.currentLane = 0;
         else if (clickX > width * 0.66) state.currentLane = 2;
         else state.currentLane = 1;
-        
         updatePlayerPosition();
     });
 
-    // TOUCH: Swipe e Tap
+    // TOUCH (Turbo e Spostamento)
     let touchStartX = 0;
+    let touchStartY = 0; // <--- Dichiarata correttamente
+
     gameViewport.addEventListener('touchstart', e => { 
-        touchStartX = e.touches[0].clientX; 
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY; // <--- QUESTA ERA LA RIGA MANCANTE
     }, {passive: false});
 
     gameViewport.addEventListener('touchend', e => {
         if (!state.isPlaying) return;
         const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        
         const diffX = touchEndX - touchStartX;
+        const diffY = touchStartY - touchEndY; // Differenza positiva = swipe verso l'alto
 
-        if (Math.abs(diffX) > 40) {
+        // 1. Controllo TURBO (Swipe verso l'alto di almeno 60px)
+        if (diffY > 60) {
+            activateTurbo();
+        } 
+        // 2. Controllo SPOSTAMENTO (Swipe laterale)
+        else if (Math.abs(diffX) > 40) {
             if (diffX > 0) moveRight(); else moveLeft();
-        } else {
+        } 
+        // 3. Controllo TAP (Pressione singola come il mouse)
+        else {
             const rect = gameViewport.getBoundingClientRect();
             const tapX = touchEndX - rect.left;
             if (tapX < rect.width * 0.33) state.currentLane = 0;
@@ -187,11 +199,11 @@ function init() {
         }
     }, {passive: false});
 
-    // UNICO GESTORE MUTE
+    // GESTORE MUTE
     const muteBtn = document.getElementById('mute-btn');
     if (muteBtn) {
         muteBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita interferenze con il click del gioco
+            e.stopPropagation();
             state.isMuted = !state.isMuted;
             muteBtn.innerText = state.isMuted ? '🔇' : '🔊';
             soundSbanda.muted = state.isMuted;
@@ -200,7 +212,6 @@ function init() {
         });
     }
 }
-
 function handleInput(e) {
     if (!state.isPlaying) return;
     if (e.key === 'ArrowLeft') moveLeft();
