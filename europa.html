@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CorriEuropa 50 Capitali</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-euro.css">
+    
+    <meta property="og:title" content="CorriEuropa">
+    <meta property="og:description" content="Guida attraverso l'Europa!">
+    <meta property="og:image" content="corrieuropa.jpg">
+    <link rel="icon" type="image/png" href="faviconeuro.png">
+
+    <style>
+        body {
+            background-color: #111;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            /* Questo è lo sfondo che dicevi mancava */
+            background-image: url('sfondo-esterno-euro.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Nasconde il gioco finché non si preme start */
+        #game-viewport:has(#overlay-start:not(.hidden)) > div:not(#overlay-start) {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-viewport">
+        <div id="particles-container"></div>
+
+        <div id="feedback-pop" class="hidden"></div>
+
+        <div class="hud">
+            <div id="score-display">PUNTI: 0</div>
+            <div id="lives-display">❤️❤️❤️</div>
+        </div>
+
+        <div id="entities-container"></div>
+
+        <div id="player" class="lane-1">
+            <div class="car-sprite"></div>
+        </div>
+
+        <div class="mission-bar">
+            <h1 id="target-display">---</h1>
+        </div>
+
+        <div id="overlay-start" class="overlay">
+            <h1 style="color: #FFD93D; font-size: 3.5rem;">CORRI EUROPA</h1>
+            <p id="start-instructions" style="font-family: 'Oswald'; font-size: 1.3rem;">
+                Apparirà una <b>CITTÀ</b>.<br>
+                Guida verso la sua <b>NAZIONE</b>.<br><br>
+                Usa le frecce o tocca per sterzare.<br>
+                <b>Freccia SU</b> per il TURBO!
+            </p>
+            <button onclick="startGame()">PARTI</button>
+        </div>
+
+        <div id="overlay-over" class="overlay hidden">
+            <h1 style="color: #FF5252;">GAME OVER</h1>
+            <div id="error-container">
+                <p id="last-error-display" style="margin: 10px 0; font-size: 1.4rem; color: #FFD93D;"></p>
+                <div id="did-you-know-box" style="margin-top: 20px; padding: 15px; border: 1px solid #555; background: rgba(0,0,0,0.5); border-radius: 10px;">
+                    <span style="font-size: 0.9rem; text-transform: uppercase; color: #aaa;">Lo sapevi che...</span><br>
+                    <p id="did-you-know-text" style="font-size: 1.1rem; font-style: italic; margin-top: 5px; color: #fff;">...</p>
+                </div>
+            </div>
+            <button onclick="resetToStart()">RIPROVA</button>
+        </div>
+
+        <div id="overlay-win" class="overlay hidden">
+            <h1>CAMPIONE! 🏆</h1>
+            <p>Hai completato il tour europeo!</p>
+            <button onclick="resetToStart()">GIOCA ANCORA</button>
+        </div>
+    </div>
+
+    <script src="scripteuro.js"></script>
+</body>
+</html>
