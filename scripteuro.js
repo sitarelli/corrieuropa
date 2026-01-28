@@ -6,104 +6,107 @@
  */
 
 const europeanCapitals = [
-   
- // EUROPA OCCIDENTALE
-   { città: "Parigi", regione: "Francia", curiosità: "La città dell'amore, famosa per la Torre Eiffel e il Museo del Louvre." },
-   { città: "Londra", regione: "Regno Unito", curiosità: "Attraversata dal Tamigi, ospita l'iconico Big Ben e Buckingham Palace." },
-   { città: "Berlino", regione: "Germania", curiosità: "Famosa per la Porta di Brandeburgo e i resti del suo storico Muro." },
-   { città: "Amsterdam", regione: "Paesi Bassi", curiosità: "Nota per i suoi canali, le biciclette e la casa di Anna Frank." },
-   { città: "Bruxelles", regione: "Belgio", curiosità: "Sede delle principali istituzioni UE e famosa per il cioccolato." },
-   { città: "Dublino", regione: "Irlanda", curiosità: "Patria della Guinness e del vivace quartiere di Temple Bar." },
-   { città: "Lussemburgo", regione: "Lussemburgo", curiosità: "Una delle capitali più piccole, situata su gole profonde." },
-   { città: "Monaco", regione: "Monaco", curiosità: "Famosa per il Gran Premio di F1 e il lussuoso casinò di Monte Carlo." },
+   // EUROPA OCCIDENTALE (OVEST)
+   { città: "Parigi", regione: "Francia", zona: "OVEST", curiosità: "La città dell'amore, famosa per la Torre Eiffel e il Museo del Louvre." },
+   { città: "Londra", regione: "Regno Unito", zona: "OVEST", curiosità: "Attraversata dal Tamigi, ospita l'iconico Big Ben e Buckingham Palace." },
+   { città: "Berlino", regione: "Germania", zona: "CENTRO", curiosità: "Famosa per la Porta di Brandeburgo e i resti del suo storico Muro." },
+   { città: "Amsterdam", regione: "Paesi Bassi", zona: "OVEST", curiosità: "Nota per i suoi canali, le biciclette e la casa di Anna Frank." },
+   { città: "Bruxelles", regione: "Belgio", zona: "OVEST", curiosità: "Sede delle principali istituzioni UE e famosa per il cioccolato." },
+   { città: "Dublino", regione: "Irlanda", zona: "OVEST", curiosità: "Patria della Guinness e del vivace quartiere di Temple Bar." },
+   { città: "Lussemburgo", regione: "Lussemburgo", zona: "OVEST", curiosità: "Una delle capitali più piccole, situata su gole profonde." },
+   { città: "Monaco", regione: "Monaco", zona: "OVEST", curiosità: "Famosa per il Gran Premio di F1 e il lussuoso casinò di Monte Carlo." },
 
-   // EUROPA MERIDIONALE
-   { città: "Roma", regione: "Italia", curiosità: "La Città Eterna, culla dell'Impero Romano e del Rinascimento." },
-   { città: "Madrid", regione: "Spagna", curiosità: "Celebre per il Museo del Prado e la movida notturna." },
-   { città: "Lisbona", regione: "Portogallo", curiosità: "Costruita su sette colli, famosa per i suoi tram gialli e il Fado." },
-   { città: "Atene", regione: "Grecia", curiosità: "Culla della democrazia, dominata dal maestoso Partenone." },
-   { città: "La Valletta", regione: "Malta", curiosità: "Città fortezza barocca, interamente patrimonio UNESCO." },
-   { città: "San Marino", regione: "San Marino", curiosità: "Capitale della repubblica più antica del mondo, arroccata sul Monte Titano." },
-   { città: "Città del Vaticano", regione: "Vaticano", curiosità: "Lo stato più piccolo del mondo, cuore della cristianità." },
-   { città: "Andorra la Vella", regione: "Andorra", curiosità: "La capitale più alta d'Europa, situata nei Pirenei." },
+   // EUROPA MERIDIONALE (SUD)
+   { città: "Roma", regione: "Italia", zona: "SUD", curiosità: "La Città Eterna, culla dell'Impero Romano e del Rinascimento." },
+   { città: "Madrid", regione: "Spagna", zona: "SUD", curiosità: "Celebre per il Museo del Prado e la movida notturna." },
+   { città: "Lisbona", regione: "Portogallo", zona: "SUD", curiosità: "Costruita su sette colli, famosa per i suoi tram gialli e il Fado." },
+   { città: "Atene", regione: "Grecia", zona: "SUD", curiosità: "Culla della democrazia, dominata dal maestoso Partenone." },
+   { città: "La Valletta", regione: "Malta", zona: "SUD", curiosità: "Città fortezza barocca, interamente patrimonio UNESCO." },
+   { città: "San Marino", regione: "San Marino", zona: "SUD", curiosità: "Capitale della repubblica più antica del mondo, arroccata sul Monte Titano." },
+   { città: "Città del Vaticano", regione: "Vaticano", zona: "SUD", curiosità: "Lo stato più piccolo del mondo, cuore della cristianità." },
+   { città: "Andorra la Vella", regione: "Andorra", zona: "SUD", curiosità: "La capitale più alta d'Europa, situata nei Pirenei." },
 
-   // EUROPA SETTENTRIONALE
-   { città: "Stoccolma", regione: "Svezia", curiosità: "Costruita su 14 isole collegate da 57 ponti." },
-   { città: "Oslo", regione: "Norvegia", curiosità: "Nota per i suoi parchi, musei di navi vichinghe e il design moderno." },
-   { città: "Copenaghen", regione: "Danimarca", curiosità: "Sede della Sirenetta e dei colorati canali di Nyhavn." },
-   { città: "Helsinki", regione: "Finlandia", curiosità: "La città bianca del Nord, affacciata sul Mar Baltico." },
-   { città: "Reykjavik", regione: "Islanda", curiosità: "La capitale più a nord del mondo, terra di vulcani e geyser." },
-   { città: "Tallinn", regione: "Estonia", curiosità: "Vanta uno dei centri storici medievali meglio conservati d'Europa." },
-   { città: "Riga", regione: "Lettonia", curiosità: "Famosa per la sua architettura Art Nouveau e il mercato centrale." },
-   { città: "Vilnius", regione: "Lituania", curiosità: "Nota per la sua grande città vecchia barocca." },
+   // EUROPA SETTENTRIONALE (NORD)
+   { città: "Stoccolma", regione: "Svezia", zona: "NORD", curiosità: "Costruita su 14 isole collegate da 57 ponti." },
+   { città: "Oslo", regione: "Norvegia", zona: "NORD", curiosità: "Nota per i suoi parchi, musei di navi vichinghe e il design moderno." },
+   { città: "Copenaghen", regione: "Danimarca", zona: "NORD", curiosità: "Sede della Sirenetta e dei colorati canali di Nyhavn." },
+   { città: "Helsinki", regione: "Finlandia", zona: "NORD", curiosità: "La città bianca del Nord, affacciata sul Mar Baltico." },
+   { città: "Reykjavik", regione: "Islanda", zona: "NORD", curiosità: "La capitale più a nord del mondo, terra di vulcani e geyser." },
+   { città: "Tallinn", regione: "Estonia", zona: "NORD", curiosità: "Vanta uno dei centri storici medievali meglio conservati d'Europa." },
+   { città: "Riga", regione: "Lettonia", zona: "NORD", curiosità: "Famosa per la sua architettura Art Nouveau e il mercato centrale." },
+   { città: "Vilnius", regione: "Lituania", zona: "NORD", curiosità: "Nota per la sua grande città vecchia barocca." },
 
-   // EUROPA CENTRALE
-   { città: "Vienna", regione: "Austria", curiosità: "Città della musica classica, dei valzer e delle torte Sacher." },
-   { città: "Berna", regione: "Svizzera", curiosità: "Città medievale circondata dal fiume Aare, famosa per gli orsi." },
-   { città: "Praga", regione: "Repubblica Ceca", curiosità: "La città delle cento torri, famosa per il Ponte Carlo." },
-   { città: "Varsavia", regione: "Polonia", curiosità: "Risorta dalle ceneri della guerra, un mix di storia e grattacieli." },
-   { città: "Budapest", regione: "Ungheria", curiosità: "La perla del Danubio, famosa per i suoi bagni termali." },
-   { città: "Bratislava", regione: "Slovacchia", curiosità: "Situata al confine tra tre nazioni, dominata dal suo castello." },
-   { città: "Lubiana", regione: "Slovenia", curiosità: "Città verde ricca di draghi e ponti pittoreschi." },
-   { città: "Vaduz", regione: "Liechtenstein", curiosità: "Piccola capitale dominata dal castello della famiglia principesca." },
+   // EUROPA CENTRALE (CENTRO)
+   { città: "Vienna", regione: "Austria", zona: "CENTRO", curiosità: "Città della musica classica, dei valzer e delle torte Sacher." },
+   { città: "Berna", regione: "Svizzera", zona: "CENTRO", curiosità: "Città medievale circondata dal fiume Aare, famosa per gli orsi." },
+   { città: "Praga", regione: "Repubblica Ceca", zona: "CENTRO", curiosità: "La città delle cento torri, famosa per il Ponte Carlo." },
+   { città: "Varsavia", regione: "Polonia", zona: "CENTRO", curiosità: "Risorta dalle ceneri della guerra, un mix di storia e grattacieli." },
+   { città: "Budapest", regione: "Ungheria", zona: "CENTRO", curiosità: "La perla del Danubio, famosa per i suoi bagni termali." },
+   { città: "Bratislava", regione: "Slovacchia", zona: "CENTRO", curiosità: "Situata al confine tra tre nazioni, dominata dal suo castello." },
+   { città: "Lubiana", regione: "Slovenia", zona: "CENTRO", curiosità: "Città verde ricca di draghi e ponti pittoreschi." },
+   { città: "Vaduz", regione: "Liechtenstein", zona: "CENTRO", curiosità: "Piccola capitale dominata dal castello della famiglia principesca." },
 
-   // EUROPA ORIENTALE E BALCANI
-   { città: "Kiev", regione: "Ucraina", curiosità: "Famosa per le cupole dorate del monastero delle grotte." },
-   { città: "Mosca", regione: "Russia", curiosità: "Sede del Cremlino e della coloratissima Piazza Rossa." },
-   { città: "Bucarest", regione: "Romania", curiosità: "Nota un tempo come la 'Piccola Parigi' dell'Est." },
-   { città: "Sofia", regione: "Bulgaria", curiosità: "Una delle città più antiche, costruita su sorgenti termali." },
-   { città: "Belgrado", regione: "Serbia", curiosità: "La città bianca alla confluenza tra Danubio e Sava." },
-   { città: "Zagabria", regione: "Croazia", curiosità: "Famosa per i suoi musei insoliti e la città alta storica." },
-   { città: "Sarajevo", regione: "Bosnia", curiosità: "Punto d'incontro tra cultura orientale e occidentale." },
-   { città: "Tirana", regione: "Albania", curiosità: "Celebre per i suoi edifici dai colori vivaci e Piazza Scanderbeg." },
-   { città: "Skopje", regione: "Macedonia del Nord", curiosità: "Città natale di Madre Teresa, ricca di statue e ponti." },
-   { città: "Podgorica", regione: "Montenegro", curiosità: "Città moderna situata tra cinque fiumi." },
-   { città: "Pristina", regione: "Kosovo", curiosità: "La capitale più giovane d'Europa, vivace e dinamica." },
-   { città: "Chisinau", regione: "Moldavia", curiosità: "Conosciuta per i suoi ampi parchi e la cultura del vino." },
-   { città: "Minsk", regione: "Bielorussia", curiosità: "Caratterizzata da un'imponente architettura in stile impero stalinista." },
+   // EUROPA ORIENTALE E BALCANI (EST)
+   { città: "Kiev", regione: "Ucraina", zona: "EST", curiosità: "Famosa per le cupole dorate del monastero delle grotte." },
+   { città: "Mosca", regione: "Russia", zona: "EST", curiosità: "Sede del Cremlino e della coloratissima Piazza Rossa." },
+   { città: "Bucarest", regione: "Romania", zona: "EST", curiosità: "Nota un tempo come la 'Piccola Parigi' dell'Est." },
+   { città: "Sofia", regione: "Bulgaria", zona: "EST", curiosità: "Una delle città più antiche, costruita su sorgenti termali." },
+   { città: "Belgrado", regione: "Serbia", zona: "EST", curiosità: "La città bianca alla confluenza tra Danubio e Sava." },
+   { città: "Zagabria", regione: "Croazia", zona: "EST", curiosità: "Famosa per i suoi musei insoliti e la città alta storica." },
+   { città: "Sarajevo", regione: "Bosnia", zona: "EST", curiosità: "Punto d'incontro tra cultura orientale e occidentale." },
+   { città: "Tirana", regione: "Albania", zona: "EST", curiosità: "Celebre per i suoi edifici dai colori vivaci e Piazza Scanderbeg." },
+   { città: "Skopje", regione: "Macedonia del Nord", zona: "EST", curiosità: "Città natale di Madre Teresa, ricca di statue e ponti." },
+   { città: "Podgorica", regione: "Montenegro", zona: "EST", curiosità: "Città moderna situata tra cinque fiumi." },
+   { città: "Pristina", regione: "Kosovo", zona: "EST", curiosità: "La capitale più giovane d'Europa, vivace e dinamica." },
+   { città: "Chisinau", regione: "Moldavia", zona: "EST", curiosità: "Conosciuta per i suoi ampi parchi e la cultura del vino." },
+   { città: "Minsk", regione: "Bielorussia", zona: "EST", curiosità: "Caratterizzata da un'imponente architettura in stile impero stalinista." },
 
    // ALTRE (CAUCASO / CONFINE)
-   { città: "Ankara", regione: "Turchia", curiosità: "Cuore pulsante della Turchia moderna, ospita il mausoleo di Atatürk." },
-   { città: "Tbilisi", regione: "Georgia", curiosità: "Famosa per le terme sulfuree e il centro storico pittoresco." },
-   { città: "Yerevan", regione: "Armenia", curiosità: "La città rosa, una delle più antiche del mondo abitata ininterrottamente." },
-   { città: "Baku", regione: "Azerbaigian", curiosità: "Città del vento, dove grattacieli moderni incontrano mura medievali." },
-   { città: "Nicosia", regione: "Cipro", curiosità: "L'ultima capitale al mondo ancora divisa da una linea verde." }
+   { città: "Ankara", regione: "Turchia", zona: "EST", curiosità: "Cuore pulsante della Turchia moderna, ospita il mausoleo di Atatürk." },
+   { città: "Tbilisi", regione: "Georgia", zona: "EST", curiosità: "Famosa per le terme sulfuree e il centro storico pittoresco." },
+   { città: "Yerevan", regione: "Armenia", zona: "EST", curiosità: "La città rosa, una delle più antiche del mondo abitata ininterrottamente." },
+   { città: "Baku", regione: "Azerbaigian", zona: "EST", curiosità: "Città del vento, dove grattacieli moderni incontrano mura medievali." },
+   { città: "Nicosia", regione: "Cipro", zona: "EST", curiosità: "L'ultima capitale al mondo ancora divisa da una linea verde." }
 ];
 
-
-
-/* ==========================================================
-   INCOLLA DA QUI FINO ALLA FINE DEL FILE
-   (Sostituisce tutto il vecchio codice dopo europeanCapitals)
-   ========================================================== */
-
+/* --- RISORSE AUDIO --- */
 const soundSbanda = new Audio('sbanda.mp3');
-soundSbanda.volume = 0.5;
 const soundAccelera = new Audio('accelera.mp3');
+soundSbanda.volume = 0.5;
 soundAccelera.volume = 0.5;
 
-// --- CONFIGURAZIONE STRADA E LINEE ---
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playWinSound() {
+    if (state.isMuted) return;
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    oscillator.type = 'sine'; 
+    oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+    gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+    oscillator.start();
+    oscillator.stop(audioCtx.currentTime + 0.3);
+}
+
+/* --- CONFIGURAZIONE --- */
 const ROAD_SETTINGS = {
-    START_Y_PERCENT: 26.5,      // Altezza orizzonte
-    
-    // 1. TRAPEZIO STRADA (Asfalto/Sfondo strada.png)
-    ROAD_WIDTH_TOP: 50,         
-    ROAD_WIDTH_BOTTOM: 400,     
-    
-    // --- PARAMETRI TEXTURE E DEFORMAZIONE 3D ---
-    TEXTURE_TILE_SIZE: 100,     
-    TEXTURE_SPEED_FACTOR: 1500, 
-    ROAD_PERSPECTIVE: 1500,      
-    ROAD_TILT: 15,              
-    ROAD_OPACITY: 0.2,          // <--- SETTATA AL 50% COME RICHIESTO
-    
-    // 2. TRAPEZIO LINEE (Le strisce bianche divisorie)
-    LINES_WIDTH_TOP: 8,        
-    LINES_WIDTH_BOTTOM: 165,    
-    
-    ROTATION_DEG: -10,           
-    PERSPECTIVE_POWER: 5,       
-    NUM_SEGMENTS: 12            
+    START_Y_PERCENT: 26.5,
+    ROAD_WIDTH_TOP: 50,
+    ROAD_WIDTH_BOTTOM: 400,
+    TEXTURE_TILE_SIZE: 100,
+    TEXTURE_SPEED_FACTOR: 2900,
+    ROAD_PERSPECTIVE: 1500,
+    ROAD_TILT: 15,
+    ROAD_OPACITY: 0.2,
+    LINES_WIDTH_TOP: 5,
+    LINES_WIDTH_BOTTOM: 450,
+    ROTATION_DEG: -100,
+    PERSPECTIVE_POWER: 9,
+    NUM_SEGMENTS: 15
 };
 
 const CONSTANTS = {
@@ -114,18 +117,19 @@ const CONSTANTS = {
 
 let state = {
     isPlaying: false,
+    isMuted: false,
     score: 0,
     lives: 3,
     currentLane: 1,
     currentTarget: null,
-    cityQueue: [],      // Coda delle città per il giro completo
+    cityQueue: [],
     gates: [],
-    roadLines: [], 
-    lastTime: 0, 
+    roadLines: [],
+    lastTime: 0,
     isTurbo: false,
-    waveActive: false, 
+    waveActive: false,
     animationFrameId: null,
-    textureOffset: 0 
+    textureOffset: 0
 };
 
 // Riferimenti DOM
@@ -138,25 +142,63 @@ const gameViewport = document.getElementById('game-viewport');
 const particlesContainer = document.getElementById('particles-container');
 const overlayStart = document.getElementById('overlay-start');
 const overlayOver = document.getElementById('overlay-over');
-const overlayWin = document.getElementById('overlay-win') || document.createElement('div'); // Fallback se non esiste l'ID
+const overlayWin = document.getElementById('overlay-win') || document.createElement('div');
 const lastErrorDisplay = document.getElementById('last-error-display');
 const didYouKnowText = document.getElementById('did-you-know-text');
 
-// --- GESTIONE INPUT ---
+/* --- GESTIONE INPUT (MOUSE + TOUCH + TASTIERA) --- */
 function init() {
     document.addEventListener('keydown', handleInput);
-    let touchStartX = 0; let touchStartY = 0;
+
+    // MOUSE: Click sulle 3 colonne
+    gameViewport.addEventListener('mousedown', e => {
+        if (!state.isPlaying) return;
+        const rect = gameViewport.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const width = rect.width;
+
+        if (clickX < width * 0.33) state.currentLane = 0;
+        else if (clickX > width * 0.66) state.currentLane = 2;
+        else state.currentLane = 1;
+        
+        updatePlayerPosition();
+    });
+
+    // TOUCH: Swipe e Tap
+    let touchStartX = 0;
     gameViewport.addEventListener('touchstart', e => { 
-        touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX; 
     }, {passive: false});
+
     gameViewport.addEventListener('touchend', e => {
         if (!state.isPlaying) return;
-        const touchEndX = e.changedTouches[0].clientX; const touchEndY = e.changedTouches[0].clientY;
-        const diffX = touchEndX - touchStartX; const diffY = touchStartY - touchEndY; 
-        if (diffY > 60) activateTurbo();
-        else if (Math.abs(diffX) > 40) { if (diffX > 0) moveRight(); else moveLeft(); }
-        else { if (touchEndX < window.innerWidth / 2) moveLeft(); else moveRight(); }
+        const touchEndX = e.changedTouches[0].clientX;
+        const diffX = touchEndX - touchStartX;
+
+        if (Math.abs(diffX) > 40) {
+            if (diffX > 0) moveRight(); else moveLeft();
+        } else {
+            const rect = gameViewport.getBoundingClientRect();
+            const tapX = touchEndX - rect.left;
+            if (tapX < rect.width * 0.33) state.currentLane = 0;
+            else if (tapX > rect.width * 0.66) state.currentLane = 2;
+            else state.currentLane = 1;
+            updatePlayerPosition();
+        }
     }, {passive: false});
+
+    // UNICO GESTORE MUTE
+    const muteBtn = document.getElementById('mute-btn');
+    if (muteBtn) {
+        muteBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita interferenze con il click del gioco
+            state.isMuted = !state.isMuted;
+            muteBtn.innerText = state.isMuted ? '🔇' : '🔊';
+            soundSbanda.muted = state.isMuted;
+            soundAccelera.muted = state.isMuted;
+            muteBtn.blur();
+        });
+    }
 }
 
 function handleInput(e) {
@@ -168,22 +210,25 @@ function handleInput(e) {
 
 function activateTurbo() {
     if (!state.isTurbo && state.waveActive) {
-        soundAccelera.play(); state.isTurbo = true; playerEl.classList.add('turbo-active');
+        if (!state.isMuted) soundAccelera.play();
+        state.isTurbo = true;
+        playerEl.classList.add('turbo-active');
     }
 }
 
 function moveLeft() { if (state.currentLane > 0) { state.currentLane--; updatePlayerPosition(); } }
 function moveRight() { if (state.currentLane < 2) { state.currentLane++; updatePlayerPosition(); } }
+
 function updatePlayerPosition() {
-    playerEl.className = ''; playerEl.classList.add('lane-' + state.currentLane);
+    playerEl.className = '';
+    playerEl.classList.add('lane-' + state.currentLane);
     if(state.isTurbo) playerEl.classList.add('turbo-active');
 }
+
 function updateScore() { scoreEl.innerText = 'PUNTI: ' + state.score; }
 function updateLives() { livesEl.innerText = '❤️'.repeat(state.lives); }
 
-init();
-
-// --- GESTIONE GRAFICA STRADA ---
+/* --- LOGICA DI GIOCO --- */
 
 function initRoad() {
     let roadSurface = document.getElementById('road-surface');
@@ -192,199 +237,126 @@ function initRoad() {
         roadSurface.id = 'road-surface';
         gameViewport.insertBefore(roadSurface, particlesContainer || gameViewport.firstChild);
     }
-
     roadSurface.style.cssText = `
-        position: absolute;
-        bottom: -50px;
-        left: 50%;
-        width: 150%; 
-        height: ${100 - ROAD_SETTINGS.START_Y_PERCENT + 15}%; 
-        background-image: url('img/strada.png'); 
-        background-repeat: repeat;
+        position: absolute; bottom: -50px; left: 50%; width: 150%;
+        height: ${100 - ROAD_SETTINGS.START_Y_PERCENT + 15}%;
+        background-image: url('img/strada.png'); background-repeat: repeat;
         background-size: ${ROAD_SETTINGS.TEXTURE_TILE_SIZE}px ${ROAD_SETTINGS.TEXTURE_TILE_SIZE}px;
-        background-color: #333;
-        opacity: ${ROAD_SETTINGS.ROAD_OPACITY}; /* TRASPARENZA 50% */
+        background-color: #333; opacity: ${ROAD_SETTINGS.ROAD_OPACITY};
         transform-origin: bottom center;
         transform: translateX(-50%) perspective(${ROAD_SETTINGS.ROAD_PERSPECTIVE}px) rotateX(${ROAD_SETTINGS.ROAD_TILT}deg);
-        clip-path: polygon(
-            calc(50% - ${ROAD_SETTINGS.ROAD_WIDTH_TOP / 2}px) 0%, 
-            calc(50% + ${ROAD_SETTINGS.ROAD_WIDTH_TOP / 2}px) 0%, 
-            calc(50% + ${ROAD_SETTINGS.ROAD_WIDTH_BOTTOM / 2}px) 100%, 
-            calc(50% - ${ROAD_SETTINGS.ROAD_WIDTH_BOTTOM / 2}px) 100%
-        );
-        z-index: -5; 
-        pointer-events: none;
+        clip-path: polygon(calc(50% - ${ROAD_SETTINGS.ROAD_WIDTH_TOP/2}px) 0%, calc(50% + ${ROAD_SETTINGS.ROAD_WIDTH_TOP/2}px) 0%, calc(50% + ${ROAD_SETTINGS.ROAD_WIDTH_BOTTOM/2}px) 100%, calc(50% - ${ROAD_SETTINGS.ROAD_WIDTH_BOTTOM/2}px) 100%);
+        z-index: -5; pointer-events: none;
     `;
-
-    const oldLines = document.querySelectorAll('.road-line');
-    oldLines.forEach(l => l.remove());
     state.roadLines = [];
-    const lineSides = [-1, 1]; 
-    lineSides.forEach(side => {
+    document.querySelectorAll('.road-line').forEach(l => l.remove());
+    [-1, 1].forEach(side => {
         for (let i = 0; i < ROAD_SETTINGS.NUM_SEGMENTS; i++) {
             const line = document.createElement('div');
             line.classList.add('road-line');
-            line.style.cssText = `
-                position: absolute;
-                background-color: rgba(255, 255, 255, 0.9);
-                width: 6px; height: 40px; 
-                transform-origin: top center; z-index: -4;
-            `;
+            line.style.cssText = `position: absolute; background-color: rgba(255,255,255,0.9); width: 6px; height: 40px; transform-origin: top center; z-index: -4;`;
             gameViewport.insertBefore(line, particlesContainer);
             state.roadLines.push({ element: line, progress: i / ROAD_SETTINGS.NUM_SEGMENTS, side: side });
         }
     });
 }
 
-// --- LOGICA DI GIOCO ---
-
 function startGame() {
-
-
-    // GESTIONE RICHIESTA SCHERMO INTERO FULLSCREEN:
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen().catch(err => {
-            console.log("Errore fullscreen:", err);
-        });
-    }
-    state.isPlaying = true; 
-    state.score = 0; 
-    state.lives = 3; 
-    state.isTurbo = false;
-    state.gates = []; 
-    state.currentLane = 1; 
-    state.lastTime = performance.now();
-    state.waveActive = false; 
-    state.textureOffset = 0;
-
-    // Inizializza la coda mescolando le capitali (Giro completo)
+    if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {});
+    state.isPlaying = true; state.score = 0; state.lives = 3; state.isTurbo = false;
+    state.gates = []; state.currentLane = 1; state.lastTime = performance.now();
     state.cityQueue = [...europeanCapitals].sort(() => Math.random() - 0.5);
-
     updateScore(); updateLives(); updatePlayerPosition();
     entitiesContainer.innerHTML = ''; particlesContainer.innerHTML = '';
-    initRoad(); 
-    
-    overlayStart.classList.add('hidden'); 
-    overlayOver.classList.add('hidden');
+    initRoad();
+    overlayStart.classList.add('hidden'); overlayOver.classList.add('hidden');
     if (document.getElementById('overlay-win')) document.getElementById('overlay-win').classList.add('hidden');
-
     startNextRound();
     if (state.animationFrameId) cancelAnimationFrame(state.animationFrameId);
     requestAnimationFrame(loop);
 }
 
 function startNextRound() {
-    // Verifichiamo se ci sono ancora città nella coda
-    if (state.cityQueue.length === 0) {
-        showWinScreen();
-        return;
-    }
-
-    pickNewMission(); 
-    spawnGates();
-    state.waveActive = true; 
-    state.isTurbo = false; 
-    playerEl.classList.remove('turbo-active');
-}
-
-function pickNewMission() {
-    // Prendiamo la prossima città dalla coda (senza rimetterla dentro se indovinata)
+    if (state.cityQueue.length === 0) { showWinScreen(); return; }
     state.currentTarget = state.cityQueue.shift();
     targetDisplay.innerText = state.currentTarget.città;
     targetDisplay.classList.add('visible');
+    spawnGates();
+    state.waveActive = true; state.isTurbo = false;
+    playerEl.classList.remove('turbo-active');
 }
 
 function spawnGates() {
-    const correct = state.currentTarget.regione;
-    let w1, w2;
-    do { w1 = europeanCapitals[Math.floor(Math.random() * europeanCapitals.length)].regione; } while (w1 === correct);
-    do { w2 = europeanCapitals[Math.floor(Math.random() * europeanCapitals.length)].regione; } while (w2 === correct || w2 === w1);
-    const options = [correct, w1, w2].sort(() => Math.random() - 0.5);
-    options.forEach((text, index) => {
+    const correct = state.currentTarget;
+    let cands = europeanCapitals.filter(c => c.zona === correct.zona && c.regione !== correct.regione);
+    if (cands.length < 2) cands = europeanCapitals.filter(c => c.regione !== correct.regione);
+    cands.sort(() => Math.random() - 0.5);
+    const opts = [correct.regione, cands[0].regione, cands[1].regione].sort(() => Math.random() - 0.5);
+    opts.forEach((text, index) => {
         const gate = document.createElement('div');
-        gate.classList.add('gate'); gate.innerText = text;
+        gate.classList.add('gate');
+        gate.innerText = text;
         entitiesContainer.appendChild(gate);
-        state.gates.push({ element: gate, progress: 0, laneIndex: index, laneOffset: index - 1, isCorrect: (text === correct), active: true, hit: false, crashed: false });
+        state.gates.push({ element: gate, progress: 0, laneIndex: index, laneOffset: (index - 1), isCorrect: (text === correct.regione), crashed: false, active: true });
     });
+}
+
+function handleCollision(g) {
+    g.active = false; g.hit = true; state.waveActive = false;
+    if (g.isCorrect) {
+        if(audioCtx.state === 'suspended') audioCtx.resume();
+        playWinSound();
+        state.isTurbo = true; playerEl.classList.add('turbo-active');
+        state.score += 100; updateScore();
+        playerEl.classList.add('glow-active');
+        state.gates.forEach(o => { if(o !== g) o.element.style.opacity = '0.4'; });
+        setTimeout(() => playerEl.classList.remove('glow-active'), 600);
+    } else {
+        if (!state.isMuted) soundSbanda.play();
+        showErrorPopup(state.currentTarget.regione);
+        state.lives--; updateLives();
+        g.crashed = true; g.element.style.zIndex = "100";
+        playerEl.classList.add('crash-active'); createSmoke();
+        setTimeout(() => playerEl.classList.remove('crash-active'), 500);
+        state.isTurbo = false; playerEl.classList.remove('turbo-active');
+        state.cityQueue.push(state.currentTarget);
+        if (state.lives <= 0) gameOver(g.element.innerText);
+    }
 }
 
 function loop(currentTime) {
     if (!state.isPlaying) return;
     const dt = Math.min((currentTime - state.lastTime) / 16.67, 2);
     state.lastTime = currentTime;
-
-    // Se un'ondata è finita (tutti i cartelli usciti), passa alla prossima città
-    if (state.gates.length === 0 && state.isPlaying) {
-        startNextRound();
-    }
-
-    const currentSpeed = (state.isTurbo) ? CONSTANTS.TURBO_SPEED : CONSTANTS.NORMAL_SPEED;
-    let perceivedSpeed = state.gates.length > 0 && (!state.waveActive || state.gates[0].hit) ? CONSTANTS.EXIT_SPEED : currentSpeed;
-
-    // 1. SCORRIMENTO TEXTURE STRADA
-    state.textureOffset += perceivedSpeed * dt * ROAD_SETTINGS.TEXTURE_SPEED_FACTOR; 
-    const roadSurface = document.getElementById('road-surface');
-    if (roadSurface) roadSurface.style.backgroundPosition = `center ${state.textureOffset}px`;
-
-    // 2. SCORRIMENTO LINEE
-    state.roadLines.forEach(line => {
-        line.progress += perceivedSpeed * dt;
-        if (line.progress > 1) line.progress -= 1; 
-        const visualP = Math.pow(line.progress, ROAD_SETTINGS.PERSPECTIVE_POWER);
-        const topPos = ROAD_SETTINGS.START_Y_PERCENT + (visualP * (100 - ROAD_SETTINGS.START_Y_PERCENT));
-        const currentLineWidthSpread = ROAD_SETTINGS.LINES_WIDTH_TOP + (visualP * (ROAD_SETTINGS.LINES_WIDTH_BOTTOM - ROAD_SETTINGS.LINES_WIDTH_TOP));
-        const xPos = (gameViewport.offsetWidth / 2) + ((currentLineWidthSpread / 2) * line.side);
-        const scale = 0.1 + (visualP * 1.5); 
-        const rotation = ROAD_SETTINGS.ROTATION_DEG * line.side; 
-        line.element.style.top = topPos + '%';
-        line.element.style.left = xPos + 'px';
-        line.element.style.opacity = visualP < 0.1 ? visualP * 10 : (visualP > 0.9 ? 1 - ((visualP - 0.9) * 10) : 1);
-        line.element.style.transform = `translate(-50%, 0) scale(${scale}) rotate(${rotation}deg)`;
+    if (state.gates.length === 0 && state.isPlaying) startNextRound();
+    const speed = state.isTurbo ? CONSTANTS.TURBO_SPEED : CONSTANTS.NORMAL_SPEED;
+    const pSpeed = state.gates.length > 0 && (!state.waveActive || state.gates[0].hit) ? CONSTANTS.EXIT_SPEED : speed;
+    state.textureOffset += pSpeed * dt * ROAD_SETTINGS.TEXTURE_SPEED_FACTOR;
+    const road = document.getElementById('road-surface');
+    if (road) road.style.backgroundPosition = `center ${state.textureOffset}px`;
+    state.roadLines.forEach(l => {
+        l.progress += pSpeed * dt; if (l.progress > 1) l.progress -= 1;
+        const vP = Math.pow(l.progress, ROAD_SETTINGS.PERSPECTIVE_POWER);
+        const top = ROAD_SETTINGS.START_Y_PERCENT + (vP * (100 - ROAD_SETTINGS.START_Y_PERCENT));
+        const w = ROAD_SETTINGS.LINES_WIDTH_TOP + (vP * (ROAD_SETTINGS.LINES_WIDTH_BOTTOM - ROAD_SETTINGS.LINES_WIDTH_TOP));
+        l.element.style.top = top + '%';
+        l.element.style.left = ((gameViewport.offsetWidth / 2) + ((w / 2) * l.side)) + 'px';
+        l.element.style.transform = `translate(-50%, 0) scale(${0.1 + vP * 1.5}) rotate(${ROAD_SETTINGS.ROTATION_DEG * l.side}deg)`;
     });
-
-    // 3. MOVIMENTO CARTELLI
     for (let i = state.gates.length - 1; i >= 0; i--) {
         let g = state.gates[i];
-        let moveSpeed = (!state.waveActive || g.hit) ? CONSTANTS.EXIT_SPEED : currentSpeed;
-        g.progress += moveSpeed * dt;
-        
-        const topPos = ROAD_SETTINGS.START_Y_PERCENT + (g.progress * (100 - ROAD_SETTINGS.START_Y_PERCENT));
-        const scale = 0.02 + g.progress * 1.2;
-        const xPos = (gameViewport.offsetWidth / 2) + (g.laneOffset * (130 * scale)); 
-        
-        g.element.style.top = topPos + '%'; 
-        g.element.style.left = xPos + 'px';
-        
-        let transformString = `translate(-50%, -100%) scale(${scale})`;
-        if (g.crashed) { transformString += ` rotate(${g.progress * 100}deg) skew(20deg)`; g.element.style.opacity = Math.max(0, 1 - (g.progress - 0.8)); }
-        else if (!g.hit) { g.element.style.opacity = g.progress < 0.1 ? g.progress * 10 : 1; }
-        g.element.style.transform = transformString;
-
-        if (state.waveActive && g.active && !g.hit && g.progress >= 0.81) { if (g.laneIndex === state.currentLane) handleCollision(g); }
+        g.progress += ( (!state.waveActive || g.hit) ? CONSTANTS.EXIT_SPEED : speed ) * dt;
+        const top = ROAD_SETTINGS.START_Y_PERCENT + (g.progress * (100 - ROAD_SETTINGS.START_Y_PERCENT));
+        const sc = 0.02 + g.progress * 1.2;
+        g.element.style.top = top + '%';
+        g.element.style.left = ((gameViewport.offsetWidth / 2) + (g.laneOffset * (175 * sc))) + 'px';
+        let tr = `translate(-50%, -100%) scale(${sc})`;
+        if (g.crashed) tr += ` rotate(${g.progress * 100}deg) skew(20deg)`;
+        g.element.style.transform = tr;
+        if (state.waveActive && g.active && !g.hit && g.progress >= 0.81 && g.laneIndex === state.currentLane) handleCollision(g);
         if (g.progress > 1.5) { g.element.remove(); state.gates.splice(i, 1); }
     }
     state.animationFrameId = requestAnimationFrame(loop);
-}
-
-function handleCollision(g) {
-    g.active = false; g.hit = true; state.waveActive = false; 
-    if (g.isCorrect) {
-        soundAccelera.play(); state.isTurbo = true; playerEl.classList.add('turbo-active');
-        state.score += 100; updateScore(); playerEl.classList.add('glow-active');
-        state.gates.forEach(other => { if(other !== g) other.element.style.opacity = '0.4'; });
-        setTimeout(() => playerEl.classList.remove('glow-active'), 600);
-    } else {
-        soundSbanda.play(); state.lives--; updateLives();
-        g.crashed = true; g.element.style.zIndex = "100"; 
-        playerEl.classList.add('crash-active'); createSmoke();
-        setTimeout(() => playerEl.classList.remove('crash-active'), 500);
-        state.isTurbo = false; playerEl.classList.remove('turbo-active');
-
-        // Se sbaglia, rimettiamo la città in fondo alla coda per riprovare più tardi
-        state.cityQueue.push(state.currentTarget);
-
-        if (state.lives <= 0) gameOver(g.element.innerText);
-    }
 }
 
 function createSmoke() {
@@ -398,20 +370,30 @@ function createSmoke() {
 }
 
 function showWinScreen() {
-    state.isPlaying = false;
-    cancelAnimationFrame(state.animationFrameId);
-    targetDisplay.classList.remove('visible');
-    const winOverlay = document.getElementById('overlay-win');
-    if (winOverlay) winOverlay.classList.remove('hidden');
-    else alert("GRANDE! HAI COMPLETATO TUTTO IL GIRO!"); 
-}
-
-function gameOver(wrongTxt) {
     state.isPlaying = false; cancelAnimationFrame(state.animationFrameId);
     targetDisplay.classList.remove('visible');
-    lastErrorDisplay.innerHTML = `Hai scelto <b>${wrongTxt}</b>.<br>La risposta corretta era <b>${state.currentTarget.regione}</b>.`;
+    const win = document.getElementById('overlay-win');
+    if (win) win.classList.remove('hidden'); else alert("HAI VINTO!");
+}
+
+function gameOver(wrong) {
+    state.isPlaying = false; cancelAnimationFrame(state.animationFrameId);
+    targetDisplay.classList.remove('visible');
+    lastErrorDisplay.innerHTML = `Hai scelto <b>${wrong}</b>.<br>Era <b>${state.currentTarget.regione}</b>.`;
     if(state.currentTarget.curiosità) didYouKnowText.textContent = state.currentTarget.curiosità;
     overlayOver.classList.remove('hidden');
 }
 
-function resetToStart() { overlayOver.classList.add('hidden'); overlayStart.classList.remove('hidden'); if(document.getElementById('overlay-win')) document.getElementById('overlay-win').classList.add('hidden'); entitiesContainer.innerHTML = ''; }
+function resetToStart() { overlayOver.classList.add('hidden'); overlayStart.classList.remove('hidden'); entitiesContainer.innerHTML = ''; }
+
+function showErrorPopup(correct) {
+    const pop = document.getElementById('feedback-pop');
+    if (!pop) return;
+    pop.innerHTML = "NO!<br>ERA: " + correct;
+    pop.classList.remove('hidden');
+    setTimeout(() => pop.classList.add('visible'), 10);
+    setTimeout(() => { pop.classList.remove('visible'); setTimeout(() => pop.classList.add('hidden'), 300); }, 2500);
+}
+
+// Avvio
+init();
