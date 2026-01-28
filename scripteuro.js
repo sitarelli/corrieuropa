@@ -94,17 +94,17 @@ function playWinSound() {
 
 /* --- CONFIGURAZIONE --- */
 const ROAD_SETTINGS = {
-    START_Y_PERCENT: 26.5,
-    ROAD_WIDTH_TOP: 50,
+    START_Y_PERCENT: 30.5,
+    ROAD_WIDTH_TOP: 80,
     ROAD_WIDTH_BOTTOM: 700,
     TEXTURE_TILE_SIZE: 100,
     TEXTURE_SPEED_FACTOR: 2900,
     ROAD_PERSPECTIVE: 1500,
     ROAD_TILT: 15,
     ROAD_OPACITY: 0.3,
-    LINES_WIDTH_TOP: 5,
-    LINES_WIDTH_BOTTOM: 450,
-    ROTATION_DEG: 160,
+    LINES_WIDTH_TOP: 15,
+    LINES_WIDTH_BOTTOM: 220,
+    ROTATION_DEG: 170,
     PERSPECTIVE_POWER: 9,
     NUM_SEGMENTS: 15
 };
@@ -151,17 +151,31 @@ const didYouKnowText = document.getElementById('did-you-know-text');
 function init() {
     document.addEventListener('keydown', handleInput);
 
-    // MOUSE
-    gameViewport.addEventListener('mousedown', e => {
-        if (!state.isPlaying) return;
+   // GESTIONE MOUSE AGGIORNATA
+gameViewport.addEventListener('mousedown', e => {
+    if (!state.isPlaying) return;
+
+    // Se premiamo il tasto SINISTRO (button 0), spostiamo l'auto
+    if (e.button === 0) {
         const rect = gameViewport.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const width = rect.width;
-        if (clickX < width * 0.33) state.currentLane = 0;
-        else if (clickX > width * 0.66) state.currentLane = 2;
+        
+        // Qui puoi anche applicare il restringimento dell'area se vuoi
+        if (clickX < width * 0.40) state.currentLane = 0;
+        else if (clickX > width * 0.60) state.currentLane = 2;
         else state.currentLane = 1;
+        
         updatePlayerPosition();
-    });
+    } 
+    // Se premiamo il tasto DESTRO (button 2), attiviamo SOLO il turbo
+    else if (e.button === 2) {
+        activateTurbo();
+    }
+});
+
+// Fondamentale: impedisce l'apertura del menu del browser con il tasto destro
+gameViewport.addEventListener('contextmenu', e => e.preventDefault());
 
     // TOUCH (Turbo e Spostamento)
     let touchStartX = 0;
