@@ -287,7 +287,19 @@ function initRoad() {
 }
 
 function startGame() {
-    if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {});
+
+// --- MODIFICA PER FULLSCREEN iOS/SAFARI ---
+    let doc = document.documentElement;
+    if (doc.requestFullscreen) {
+        doc.requestFullscreen().catch(() => {});
+    } else if (doc.webkitRequestFullscreen) { 
+        /* Questo è il comando specifico per iPhone/Safari */
+        doc.webkitRequestFullscreen();
+    }
+    // ------------------------------------------
+
+
+
     state.isPlaying = true; state.score = 0; state.lives = 3; state.isTurbo = false;
     state.gates = []; state.currentLane = 1; state.lastTime = performance.now();
     state.cityQueue = [...europeanCapitals].sort(() => Math.random() - 0.5);
