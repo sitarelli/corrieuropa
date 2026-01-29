@@ -72,8 +72,13 @@ const europeanCapitals = [
 /* --- RISORSE AUDIO --- */
 const soundSbanda = new Audio('sbanda.mp3');
 const soundAccelera = new Audio('accelera.mp3');
+
+const bgMusic = new Audio('europa.mp3');
+bgMusic.loop = true; 
+bgMusic.volume = 0.4; // Volume al 40%
+
 soundSbanda.volume = 0.5;
-soundAccelera.volume = 0.5;
+soundAccelera.volume = 0.1;
 
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -222,6 +227,8 @@ gameViewport.addEventListener('contextmenu', e => e.preventDefault());
             muteBtn.innerText = state.isMuted ? '🔇' : '🔊';
             soundSbanda.muted = state.isMuted;
             soundAccelera.muted = state.isMuted;
+bgMusic.muted = state.isMuted;
+            if (!state.isMuted && state.isPlaying) bgMusic.play().catch(e => {});
             muteBtn.blur();
         });
     }
@@ -300,7 +307,14 @@ function startGame() {
 
 
 
-    state.isPlaying = true; state.score = 0; state.lives = 3; state.isTurbo = false;
+    state.isPlaying = true; 
+
+bgMusic.currentTime = 0;
+    if (!state.isMuted) bgMusic.play().catch(e => {});
+
+
+
+state.score = 0; state.lives = 3; state.isTurbo = false;
     state.gates = []; state.currentLane = 1; state.lastTime = performance.now();
     state.cityQueue = [...europeanCapitals].sort(() => Math.random() - 0.5);
     updateScore(); updateLives(); updatePlayerPosition();
@@ -332,6 +346,16 @@ function spawnGates() {
     opts.forEach((text, index) => {
         const gate = document.createElement('div');
         gate.classList.add('gate');
+// --- INIZIO MODIFICA GRAFICA BANDIERE ---
+        const filename = getFlagFilename(text);
+        gate.style.backgroundImage = `url('europa/${filename}')`; // Cartella specifica europa
+        gate.style.backgroundSize = 'cover';
+        gate.style.backgroundPosition = 'center';
+        gate.style.border = '2px solid white';
+        gate.style.color = 'white';
+        gate.style.textShadow = '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000';
+        gate.style.fontWeight = 'bold';
+        // --- FINE MODIFICA GRAFICA BANDIERE ---
         gate.innerText = text;
         entitiesContainer.appendChild(gate);
         state.gates.push({ element: gate, progress: 0, laneIndex: index, laneOffset: (index - 1), isCorrect: (text === correct.regione), crashed: false, active: true });
@@ -407,14 +431,18 @@ function createSmoke() {
 }
 
 function showWinScreen() {
-    state.isPlaying = false; cancelAnimationFrame(state.animationFrameId);
+    state.isPlaying = false; 
+bgMusic.pause();
+cancelAnimationFrame(state.animationFrameId);
     targetDisplay.classList.remove('visible');
     const win = document.getElementById('overlay-win');
     if (win) win.classList.remove('hidden'); else alert("HAI VINTO!");
 }
 
 function gameOver(wrong) {
-    state.isPlaying = false; cancelAnimationFrame(state.animationFrameId);
+    state.isPlaying = false; 
+bgMusic.pause();
+cancelAnimationFrame(state.animationFrameId);
     targetDisplay.classList.remove('visible');
     lastErrorDisplay.innerHTML = `Hai scelto <b>${wrong}</b>.<br>Era <b>${state.currentTarget.regione}</b>.`;
     if(state.currentTarget.curiosità) didYouKnowText.textContent = state.currentTarget.curiosità;
@@ -431,6 +459,15 @@ function showErrorPopup(correct) {
     setTimeout(() => pop.classList.add('visible'), 10);
     setTimeout(() => { pop.classList.remove('visible'); setTimeout(() => pop.classList.add('hidden'), 300); }, 2500);
 }
+
+// --- NUOVA FUNZIONE PER I NOMI FILE ---
+function getFlagFilename(regionName) {
+    // Pulisce il nome per farlo coincidere con i file nella cartella europa (es: "Regno Unito" -> "regno_unito.png")
+    let cleanName = regionName.replace(/^[^\wÀ-ÿ]+/, "").trim(); 
+    return cleanName.toLowerCase().replace(/ /g, "_").replace(/'/g, "") + ".png";
+}
+
+
 
 // Avvio
 init();
